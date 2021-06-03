@@ -2,24 +2,20 @@
 const express = require('express');
 const path = require('path')
 const app = express();
-//access to db.json
-const { notes } = require('./develop/db/db.json')
-
-//require routes
-const htmlRoutes = require('./routes/htmlRoutes/htmlRoutes')
 
 const PORT = process.env.PORT || 3001
+//require routes
+const htmlRoutes = require('./routes/htmlRoutes/htmlRoutes')
+const apiRoutes = require('./routes/apiRoutes/notesRoutes')
 
-
-app.get('/api/notes', (req, res) => {
-    res.json(notes);
-});
 
 //parse incoming string or array dataS
 app.use(express.urlencoded({ extended: true}));
 //parse incoming JSON data
 app.use(express.json());
 
+
+app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 //server running
