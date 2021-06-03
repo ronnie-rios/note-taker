@@ -1,12 +1,20 @@
+//dependencies
 const express = require('express');
+const path = require('path')
 const app = express();
-
-const { data } = require('./develop/db/db')
+//access to db.json
+const { data } = require('./develop/db/db.json')
 
 app.get('/api/data', (req, res) => {
-    res.send('hello')
+    res.json(data);
 });
 
+//to index html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './develop/public/index.html'));
+});
+
+//server running
 app.listen(3001, () => {
     console.log(`API server on PORT 3001`)
 })
