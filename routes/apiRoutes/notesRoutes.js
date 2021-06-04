@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {notes} = require('../../Develop/db/db.json')
+const {notes} = require('../../db/db.json');
 const fs = require('fs');
 const path = require('path');
 
@@ -8,18 +8,18 @@ function createNewNote(body, notesArray) {
     const newNote = body;
     notesArray.push(newNote);
     fs.writeFileSync(
-        path.join(__dirname, '../../develop/db/db.json'),
+        path.join(__dirname, '../../db/db.json'),
         JSON.stringify({ notes: notesArray}, null, 2)
     );
     return newNote;
 };
 
 //get access to json 
-router.get('/notes', (req, res) => {
+router.get('/savednotes', (req, res) => {
     res.json(notes);
 });
 //post new notes
-router.post('/notes', (req, res) => {
+router.post('/savednotes', (req, res) => {
     console.log(req.body);
     //use function to take in data to send
     const newNote = createNewNote(req.body, notes);
