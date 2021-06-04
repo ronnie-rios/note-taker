@@ -13,7 +13,8 @@ const apiRoutes = require('./routes/apiRoutes/notesRoutes')
 app.use(express.urlencoded({ extended: true}));
 //parse incoming JSON data
 app.use(express.json());
-
+//serve static 
+app.use(express.static('public'));
 
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
@@ -23,5 +24,3 @@ app.listen(3001, () => {
     console.log(`API server on ${PORT}`)
 })
 
-//serve static 
-app.use(express.static('public'));
