@@ -20,7 +20,7 @@ app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 //server running
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log(`API server on ${PORT}`)
 })
 
