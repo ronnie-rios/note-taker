@@ -15,11 +15,11 @@ function createNewNote(body, notesArray) {
 };
 
 //get access to json 
-router.get('/savednotes', (req, res) => {
+router.get('/notes', (req, res) => {
     res.json(notes);
 });
 //post new notes
-router.post('/savednotes', (req, res) => {
+router.post('/notes', (req, res) => {
     console.log(req.body);
     //use function to take in data to send
     const newNote = createNewNote(req.body, notes);
