@@ -32,7 +32,7 @@ const getNotes = () =>
       'Content-Type': 'application/json',
     },
   });
-//going to add .then on line 43 to line 50
+
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -41,14 +41,7 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note),
    })
-   //.then(response => {
-  //   if (response.ok) {
-  //     return response.json();
-  //   } alert('error: ' + response.statusText);
-  // }).then(postResponse => {
-  //   console.log(postResponse);
-  //   alert('Thanks for saving your note!')
-  // });
+  
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
