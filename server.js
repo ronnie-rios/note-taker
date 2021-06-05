@@ -3,10 +3,10 @@ const express = require('express');
 const path = require('path')
 const app = express();
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 //require routes
-const htmlRoutes = require('./routes/htmlroutes/htmlRoutes')
-const apiRoutes = require('./routes/apiroutes/notesRoutes')
+const htmlRoutes = require('./routes/htmlRoutes')
+const apiRoutes = require('./routes/notesRoutes')
 
 
 //parse incoming string or array dataS
