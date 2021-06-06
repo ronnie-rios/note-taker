@@ -2,6 +2,8 @@
  
   # Description
   A simple way to take notes, keep track of tasks, etc.
+  ![Note Taker](https://user-images.githubusercontent.com/79483108/120940173-96826000-c6e1-11eb-9d3e-0f2cf2af326a.gif)
+
 
   # Table of Contents
   * [Installation](#installation)
